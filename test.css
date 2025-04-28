@@ -1,0 +1,112 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+
+body {
+  font-family: 'Pretendard Variable', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #F2F2F7;
+  color: #3C3C43
+}
+
+.text-blue-highlight {
+  color: #0043fe;
+}
+
+#intro-section,
+#section-1 {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+#intro-section {
+  opacity: 1;
+  z-index: 10;
+  position: relative;
+}
+
+#section-1 {
+  opacity: 0;
+  z-index: 5;
+  position: relative;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 30s linear infinite;
+  width: max-content;
+  display: flex;
+}
+
+.animation-delay-3000 {
+  animation-delay: 3s;
+}
+
+.animation-delay-6000 {
+  animation-delay: 6s;
+}
+
+/* 로고 슬라이더 기본 스타일 */
+.logo-row {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  animation: slide-left linear infinite;
+  align-items: center;
+}
+
+.logo-item {
+  width: 160px;
+  height: 100px;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.logo-item img {
+  width: 80%;
+  height: 70%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+  transform: scale(1.1);
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

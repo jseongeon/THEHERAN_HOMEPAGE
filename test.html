@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>특허법인 테헤란</title>
+    <script src="https://unpkg.com/three@0.148.0/build/three.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="test.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body class="relative text-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#1C1C1E] text-[#F2F2F7]">
+      <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4">
+        <div class="mr-auto transform transition-transform duration-200 ease-in-out hover:scale-110">
+          <img src="./images/LOGO.png" alt="특허법인 테헤란 로고" class="h-6 object-contain" />
+        </div>
+
+        <!-- 데스크탑 메뉴 -->
+        <div class="hidden lg:flex items-center space-x-6 md:space-x-10">
+          <nav class="flex space-x-4 md:space-x-8 text-sm md:text-[18px] font-semibold">
+            <a href="#" class="transform transition-transform duration-200 hover:scale-110 hover:text-white cursor-pointer">전문가소개</a>
+            <a href="#" class="transform transition-transform duration-200 hover:scale-110 hover:text-white cursor-pointer">업무사례</a>
+            <a href="#" class="transform transition-transform duration-200 hover:scale-110 hover:text-white cursor-pointer">칼럼</a>
+            <a href="#" class="transform transition-transform duration-200 hover:scale-110 hover:text-white cursor-pointer">등록 가능성 진단</a>
+          </nav>
+          <div class="text-sm md:text-[18px] font-semibold transform transition-transform duration-200 hover:scale-110 cursor-pointer">
+            <span class="font-bold">TEL:</span> <a href="tel:16682373" class="hover:underline">1668-2373</a>
+          </div>
+        </div>
+
+        <!-- 모바일 햄버거 -->
+        <button id="menu-toggle" class="lg:hidden text-white text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- 모바일 메뉴 -->
+      <div id="mobile-menu" class="lg:hidden fixed top-0 right-0 w-64 h-full bg-[#1C1C1E] text-white 
+        transform translate-x-full transition-transform duration-300 z-40 
+        flex flex-col gap-y-6 p-6 text-lg font-semibold">
+
+        <!-- 닫기 버튼 -->
+        <button id="menu-close" class="self-end text-2xl focus:outline-none hover:text-gray-400 transition">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <a href="#" class="hover:text-blue-400 transform transition duration-200 hover:scale-110">전문가소개</a>
+        <a href="#" class="hover:text-blue-400 transform transition duration-200 hover:scale-110">업무사례</a>
+        <a href="#" class="hover:text-blue-400 transform transition duration-200 hover:scale-110">칼럼</a>
+        <a href="#" class="hover:text-blue-400 transform transition duration-200 hover:scale-110">등록 가능성 진단</a>
+
+        <div class="transform transition duration-200 hover:scale-110 hover:text-white active:text-blue-400 text-left cursor-pointer">
+          <span class="font-bold">TEL:</span>
+          <a href="tel:16682373" class="no-underline hover:text-blue-400 active:text-blue-400">1668-2373</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Section 0 -->
+    <section class="min-h-screen w-full relative flex items-center justify-center bg-[#0F0F0F] overflow-hidden">
+      <canvas id="bg-canvas" class="absolute inset-0 z-0"></canvas>
+      <div class="z-10 text-center px-4">
+        <p class="text-4xl md:text-6xl font-light mb-4">당신의 권리가 빛나는</p>
+        <h1 id="typing-text" class="text-6xl md:text-9xl font-bold leading-snug whitespace-pre-wrap"></h1>
+      </div>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="flex items-center justify-center min-h-screen bg-[#0F0F0F] relative px-4 mb-[145px]">
+      <div class="w-full max-w-[960px] aspect-video bg-black rounded-[32px] overflow-hidden shadow-xl border border-white/10">
+        <video src="./movie/pagemain.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+      </div>
+      <div id="like-button" class="absolute bottom-6 right-6 flex items-center text-[#FAFAFA]] space-x-2 text-lg cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110 active:scale-90">
+        <i id="heart-icon" class="fas fa-heart transition-all duration-200 hover:text-pink-400"></i>
+        <span id="like-count">999+</span>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="section-2" class="bg-[#F2F2F7] text-[#3C3C43] pt-20 px-4">
+      <!-- 카드 그리드 -->
+      <div class="flex justify-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-6xl w-full">
+          
+          <!-- 카드 1 -->
+          <div class="bg-[#eee] rounded-2xl shadow-lg p-8 relative border-b-[6px] border-[#0043fe]">
+            <div class="text-center text-4xl font-bold mb-2x1">지식재산권</div>
+            <div class="text-sm text-right mb-4">2019.02~2025.03 기준<br />국내 및 해외 포함</div>
+            <p class="text-[#0043fe] text-5xl font-extrabold text-center count-up" data-target="29487">0</p>
+          </div>
+
+          <!-- 카드 2 -->
+          <div class="bg-[#eee] rounded-2xl shadow-lg p-8 relative border-b-[6px] border-[#16A34A]">
+            <div class="text-center text-4xl font-bold mb-2x1">특허</div>
+            <div class="text-sm text-right mb-4">2019.02~2025.03 기준<br />국내 및 해외 포함</div>
+            <p class="text-[#16A34A] text-5xl font-extrabold text-center count-up" data-target="5699">0</p>
+          </div>
+
+          <!-- 카드 3 -->
+          <div class="bg-[#eee] rounded-2xl shadow-lg p-8 relative border-b-[6px] border-[#8B5CF6]">
+            <div class="text-center text-4xl font-bold mb-2x1">상표</div>
+            <div class="text-sm text-right mb-4">2019.02~2025.03 기준<br />국내 및 해외 포함</div>
+            <p class="text-[#8B5CF6] text-5xl font-extrabold text-center count-up" data-target="19366">0</p>
+          </div>
+
+          <!-- 카드 4 -->
+          <div class="bg-[#eee] rounded-xl shadow-lg p-8 relative border-b-[6px] border-[#F59E0B]">
+            <div class="text-center text-4xl font-bold mb-2x1">디자인</div>
+            <div class="text-sm text-right mb-4">2019.02~2025.03 기준<br />국내 및 해외 포함</div>
+            <p class="text-[#F59E0B] text-5xl font-extrabold text-center count-up" data-target="4422">0</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 설명문구 전체 컨테이너 -->
+      <div class="w-full flex flex-col items-center mt-[190px] space-y-32">
+
+        <!-- 상단 문구 -->
+        <div class="text-center max-w-6xl px-4 mb-[278px]">
+          <h2 class="text-2xl md:text-4xl font-bold mb-[20px]">
+            지식재산권 쟁탈전,
+          </h2>
+          <p class="text-2xl md:text-4xl font-bold leading-snug">
+            테헤란은 <span class="text-[#0043fe] text-3xl md:text-5xl">아이디어의 권리화를</span> 돕습니다
+          </p>
+        </div>
+
+        <!-- 하단 문구 -->
+        <div class="text-center max-w-6xl px-4">
+          <h3 class="text-2xl md:text-4xl font-bold mb-[20px]">
+            특별한 권리, 테헤란과 함께 만들어가는 
+          </h3>
+          <p class="text-2xl md:text-4xl font-bold leading-snug">
+            <span class="text-[#0043fe] text-3xl md:text-5xl">나만의 지식재산권</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="h-[120px]"></div>
+
+      <!-- 로고 섹션 -->
+      <section class="bg-[#F5F5F5] py-20 px-4 mb-[300px]">
+        <div class="space-y-8">
+          <!-- 각 줄 -->
+          <div class="overflow-hidden">
+            <div class="logo-row animate-slide" data-speed="50"></div>
+          </div>
+          <div class="overflow-hidden">
+            <div class="logo-row animate-slide" data-speed="60"></div>
+          </div>
+          <div class="overflow-hidden">
+            <div class="logo-row animate-slide" data-speed="70"></div>
+          </div>
+        </div>
+
+      <!-- 템플릿 -->
+      <template id="logo-template">
+        <div class="logo-item">
+          <img src="" alt="로고" class="logo-img" />
+        </div>
+      </template>
+      </section>
+
+    <!-- 왜 테헤란일까 섹션 -->
+    <section class="py-20 px-4 bg-[#F2F2F7] text-[#3C3C43] mb-[270px]">
+      <div class="max-w-6xl mx-auto space-y-[200px]">
+
+      <div class="text-center mb-[350px]">
+        <h2 class="text-4xl md:text-6xl font-bold">왜 테헤란일까?</h2>
+      </div>
+
+          <!-- BLUE -->
+          <div class="relative z-0 w-full sm:w-fit text-center sm:text-left flex justify-center sm:block fade-in-up">
+            <img src="images/blue.png"
+                class="absolute w-[50px] sm:w-[80px] top-[-10px] left-[22%] sm:left-0 -translate-x-[80%] sm:-translate-x-[30%] -translate-y-[25%] z-[-1]" />
+            <div class="relative z-10 ml-0 sm:ml-[32px]">
+              <h3 class="text-[25px] sm:text-[50px] font-extrabold text-[#333] leading-tight">
+                <span>PR</span><span>IVATE CONSULTING</span>
+              </h3>
+              <p class="text-[16px] sm:text-[25px] font-semibold mt-2">‘담당 변리사제’</p>
+              <p class="text-[16px] sm:text-[25px] text-gray-700 leading-relaxed">
+                를 통해 프라이빗하면서도 전문적인 지식재산 컨설팅을 제공합니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- GREEN -->
+          <div class="relative z-0 w-full sm:w-fit sm:ml-auto text-center sm:text-right flex justify-center sm:block fade-in-up">
+            <img src="images/green.png"
+                class="absolute w-[50px] sm:w-[80px] top-[-10px] right-[19%] sm:right-0 translate-x-[95%] sm:translate-x-[20%] -translate-y-[25%] sm:-translate-y-[20%] z-[-1]" />
+            <div class="relative z-10 mr-0 sm:mr-[32px]">
+              <h3 class="text-[25px] sm:text-[50px] font-extrabold text-[#333] leading-tight">
+                <span>TEHERAN</span><span> PATENT PROCESS</span>
+              </h3>
+              <p class="text-[16px] sm:text-[25px] font-medium mt-2">각 분야에 특화된 전문가와 실무진이 포진해</p>
+              <p class="text-[16px] sm:text-[25px] text-gray-700">신속하면서도 확실한 업무 수행이 가능합니다</p>
+            </div>
+          </div>
+
+          <!-- PURPLE -->
+          <div class="relative z-0 w-full sm:w-fit text-center sm:text-left flex justify-center sm:block fade-in-up">
+            <img src="images/purple.png"
+                  class="absolute w-[50px] sm:w-[80px] top-[-12px] left-[35%] sm:left-0 -translate-x-[70%] sm:-translate-x-[25%] -translate-y-[25%] sm:-translate-y-[20%] z-[-1]" />
+            <div class="relative z-10 ml-0 sm:ml-[32px] -translate-x-[4%] sm:translate-x-0">
+              <h3 class="text-[25px] sm:text-[50px] font-extrabold text-[#333] leading-tight">SYNERGY</h3>
+              <p class="text-[16px] sm:text-[25px] font-medium mt-2">세무법인 테헤란과 같은 공간에서 근무하며</p>
+              <p class="text-[16px] sm:text-[25px] text-gray-700 leading-relaxed">특허·세무 원스톱 서비스를 제공합니다</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- 연혁 -->
+    <section class="flex flex-col lg:flex-row w-full text-[#1C1C1E]">
+      <!-- 좌측 타이틀 -->
+      <div class="bg-[#EAF3FF] w-full lg:w-1/3 py-20 px-4 flex flex-col items-center justify-center text-center space-y-6">
+        <img src="images/twocircle.png" alt="파란 원 아이콘" class="w-16 h-auto" />
+        <h2 class="text-3xl lg:text-6xl font-extrabold leading-snug">특허법인 테헤란<br />주요 연혁</h2>
+        <p class="text-5xl lg:text-7xl font-light tracking-[0.2em] text-[#3C3C43]">TEHERAN</p>
+      </div>
+    <!-- 우측 타임라인 -->
+    <div class="relative w-full lg:w-2/3 py-20 px-6">
+      <!-- 수직선 -->
+      <div class="absolute top-0 left-[41px] w-px h-full bg-[#C7C7CC] z-0"></div>
+      <!-- 폰트 확대 적용 -->
+      <div class="space-y-56 text-xl lg:text-2xl leading-relaxed">
+        <!-- 반복 항목 -->
+        <div class="relative pl-10 py-6 fade-in-up" style="animation-delay: 1.0s">
+          <div class="absolute left-[18px] top-1/2 w-2.5 h-2.5 bg-[#A855F7] rounded-full -translate-x-1/2 -translate-y-1/2 z-10"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-x-6">
+            <div class="min-w-[80px] text-2xl lg:text-3xl font-bold">2019</div>
+            <div class="text-lg lg:text-xl">중소기업과 스타트업의 지식재산 보호를 위한 특허법인 테헤란 설립</div>
+          </div>
+        </div>
+
+        <div class="relative pl-10 py-6 fade-in-up" style="animation-delay: 1.2s">
+          <div class="absolute left-[18px] top-1/2 w-2.5 h-2.5 bg-[#A855F7] rounded-full -translate-x-1/2 -translate-y-1/2 z-10"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-x-6">
+            <div class="min-w-[80px] text-2xl lg:text-3xl font-bold">2020</div>
+            <ul class="list-disc pl-5 space-y-2 text-lg lg:text-xl">
+              <li>출원 건수 5,000건 돌파</li>
+              <li>지식재산(IP) 교육 런칭</li>
+              <li>World-OKTA 자문위원 위촉</li>
+              <li>2020 소비자서비스만족대상 변리사부문 대상 수상</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative pl-10 py-6 fade-in-up" style="animation-delay: 1.4s">
+          <div class="absolute left-[18px] top-1/2 w-2.5 h-2.5 bg-[#A855F7] rounded-full -translate-x-1/2 -translate-y-1/2 z-10"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-x-6">
+            <div class="min-w-[80px] text-2xl lg:text-3xl font-bold">2021</div>
+            <ul class="list-disc pl-5 space-y-2 text-lg lg:text-xl">
+              <li>테헤란솔루션 런칭</li>
+              <li>OKTA 지식재산세션 강의</li>
+              <li>IR데이터 공유 플랫폼 혁신, 연구소 협업</li>
+              <li>2021 소비자서비스만족대상 변리사부문 대상 수상</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative pl-10 py-6 fade-in-up" style="animation-delay: 1.6s">
+          <div class="absolute left-[18px] top-1/2 w-2.5 h-2.5 bg-[#A855F7] rounded-full -translate-x-1/2 -translate-y-1/2 z-10"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-x-6">
+            <div class="min-w-[80px] text-2xl lg:text-3xl font-bold">2022</div>
+            <ul class="list-disc pl-5 space-y-2 text-lg lg:text-xl">
+              <li>출원 건수 10,000건 돌파</li>
+              <li>지식재산 보호 인터뷰, 시각화 시스템</li>
+              <li>2022 소비자서비스만족대상 변리사부문 대상 수상</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative pl-10 py-6 fade-in-up" style="animation-delay: 1.8s">
+          <div class="absolute left-[18px] top-1/2 w-2.5 h-2.5 bg-[#A855F7] rounded-full -translate-x-1/2 -translate-y-1/2 z-10"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-x-6">
+            <div class="min-w-[80px] text-2xl lg:text-3xl font-bold">2023</div>
+            <ul class="list-disc pl-5 space-y-2 text-lg lg:text-xl">
+              <li>출원 건수 20,000건 돌파</li>
+              <li>P-BRO 전담팀, RPC 특허지식자산센터 컨설팅/전략 수행</li>
+              <li>2023 소비자서비스만족대상 변리사부문 대상 수상</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative pl-10 py-6 fade-in-up" style="animation-delay: 2.0s">
+          <div class="absolute left-[18px] top-1/2 w-2.5 h-2.5 bg-[#A855F7] rounded-full -translate-x-1/2 -translate-y-1/2 z-10"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-x-6">
+            <div class="min-w-[80px] text-2xl lg:text-3xl font-bold">2024</div>
+            <ul class="list-disc pl-5 space-y-2 text-lg lg:text-xl">
+              <li>출원 건수 25,000건 돌파</li>
+              <li>신규 평가기준 수립 및 전문자문 체계 구축</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative pl-10 py-6 fade-in-up" style="animation-delay: 2.2s">
+          <div class="absolute left-[18px] top-1/2 w-2.5 h-2.5 bg-[#0043FE] rounded-full -translate-x-1/2 -translate-y-1/2 z-10"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-x-6">
+            <div class="min-w-[80px] text-2xl lg:text-3xl font-bold text-[#0043FE]">NOW</div>
+            <p class="text-lg lg:text-xl">이제 여러분이 <span class="text-4xl text-[#0043FE] font-bold">테헤란의 역사</span>입니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    
+    </section>
+
+
+    <!-- Section 3 -->
+    <section class="flex items-center justify-center min-h-screen bg-[#E5E5EA] text-[#3C3C43] px-4">
+      <h2 class="text-2xl md:text-4xl font-semibold text-center">Contact or Footer</h2>
+    </section>
+  </body>
+</html>
