@@ -6,9 +6,9 @@
     <title>특허법인 테헤란</title>
     <script src="https://unpkg.com/three@0.148.0/build/three.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="test.js"></script>
+    <script defer src="./js/main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body class="relative text-white">
 
@@ -310,58 +310,69 @@
     </div>
     </section>
 
-    <!-- 전문가섹션 -->
+    <!-- 전문가 전체 섹션 -->
     <section class="py-[300px] px-4 bg-[#F2F2F7] text-[#3C3C43] mb-[270px]">
-      <div class="max-w-6xl mx-auto space-y-[200px]">
 
-      <div class="text-center mb-[350px]">
-        <h2 class="text-4xl md:text-6xl font-bold">당신의 권리를 책임질,<br /> 테헤란만의 전문가들</h2>
+      <!-- 타이틀 -->
+      <div class="max-w-6xl mx-auto mb-[200px]">
+        <div class="text-left ml-[100px]">
+          <h2 class="text-4xl md:text-6xl font-bold">당신의 권리를 책임질,<br /> 테헤란만의 전문가들</h2>
+        </div>
       </div>
-      <section class="space-y-32 max-w-6xl mx-auto">
 
-        <!-- 전문가 카드 반복 시작 -->
-        <!-- 윤용채 변리사 -->
-        <div class="group transition-transform duration-300 hover:scale-[1.015] hover:shadow-2xl flex flex-col md:flex-row bg-white rounded-2xl shadow-xl overflow-hidden p-8 items-center gap-8">
-          <div class="flex flex-col items-center text-center md:w-1/4 space-y-4">
-            <img src="images/yycPicture.png" alt="윤용채 변리사 프로필 사진" class="w-40 h-auto object-contain rounded-xl bg-[#E8F0FF] transition-transform duration-300 group-hover:scale-105" />
-            <div class="flex flex-col items-center space-y-1 leading-tight">
-              <p class="text-[#0043FE] font-bold text-lg">윤용채</p>
-              <p class="font-semibold">변리사</p>
-              <p class="text-sm text-gray-500">경력 18년</p>
+      <!-- 전문가 카드들 시작 -->
+      <div class="space-y-[120px]">
+
+        <!-- 윤웅채 변리사 -->
+        <div class="ml-[100px] max-w-[1400px]">
+          <div class="group transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col md:flex-row bg-white rounded-2xl shadow-xl overflow-hidden px-12 py-16 items-center gap-12 text-[#1C1C1E] text-base w-full">
+            <!-- 왼쪽 프로필 -->
+            <div class="flex flex-col items-center text-center md:w-1/4 space-y-5">
+              <img src="images/yycPicture.png" alt="윤웅채 변리사 프로필 사진" class="w-48 h-auto object-contain rounded-xl bg-[#E8F0FF] transition-transform duration-300 group-hover:scale-105" />
+              <div class="space-y-1 leading-tight">
+                <p class="text-[#0043FE] font-bold text-[30px]">윤웅채</p>
+                <p class="font-semibold text-[20px]">변리사</p>
+                <p class="text-[20px] text-gray-500">경력 18년</p>
+              </div>
+              <button class="bg-[#0043FE] text-white text-base font-semibold px-5 py-2 rounded-full hover:bg-blue-700 transition whitespace-nowrap">
+                변리사 지정상담 요청
+              </button>
             </div>
-            <button class="bg-[#0043FE] text-white text-sm font-semibold px-3 py-2 rounded-full hover:bg-blue-700 transition whitespace-nowrap">변리사 지정상담 요청</button>
-          </div>
-          <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-left">
-            <div>
-              <p class="font-semibold mb-1">자격／외부활동</p>
-              <ul class="list-disc list-inside space-y-1">
-                <li>기술거래사</li>
-                <li>기업·기술가치평가사</li>
-                <li>한국발명진흥회 평가위원</li>
-                <li>서울산업진흥원(SBA) 평가위원</li>
-                <li>세계한인무역협회(OKTA)국제통상전략연구원 자문위원</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold mb-1">주요 업무사례</p>
-              <ul class="list-disc list-inside space-y-1">
-                <li>삼성전자 무선통신사업부 국내외 특허출원 업무 담당</li>
-                <li>일본 SONY ENTERTAINMENT社 및 무라타제작소社 인커밍 특허출원 업무 담당</li>
-                <li>건설기술활용실적(PQ) 승인업무 담당</li>
-                <li>서울산업진흥원 평가위원</li>
-                <li>IP담보대출을 위한 IP가치평가 모델 개발</li>
-                <li>산업은행 IP 담보대출을 위한 특허기술가치평가 수행</li>
-              </ul>
+
+            <!-- 오른쪽 내용 -->
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-10 text-[16px] leading-relaxed text-left">
+              <div>
+                <p class="font-semibold mb-2 text-lg">주요 업무사례</p>
+                <ul class="list-disc list-outside pl-5 space-y-2">
+                  <li>삼성전자 무선통신사업부 국내외 특허출원 업무 담당</li>
+                  <li>일본 SONY ENTERTAINMENT社 및 무라타제작소社 인커밍 특허출원 업무 담당</li>
+                  <li>건설기술활용실적(PQ) 승인업무 담당</li>
+                  <li>IP담보대출을 위한 IP가치평가 모델 개발</li>
+                  <li>산업은행 IP 담보대출을 위한 특허기술가치평가 수행</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold mb-2 text-lg">자격/외부활동</p>
+                <ul class="list-disc list-outside pl-5 space-y-2">
+                  <li>기술거래사</li>
+                  <li>기업·기술가치평가사</li>
+                  <li>한국발명진흥회 평가위원</li>
+                  <li>서울산업진흥원(SBA) 평가위원</li>
+                  <li>세계한인무역협회(OKTA) 국제통상전략연구원 자문위원</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      
-        <!-- 김선연 변리사 -->
+
+        
+        
+        <!-- 김신연 변리사 -->
         <div class="group transition-transform duration-300 hover:scale-[1.015] hover:shadow-2xl flex flex-col md:flex-row bg-white rounded-2xl shadow-xl overflow-hidden p-8 items-center gap-8">
           <div class="flex flex-col items-center text-center md:w-1/4 space-y-4">
             <img src="images/ksyPicture.png" alt="김선연 변리사 프로필 사진" class="w-40 h-auto object-contain rounded-xl bg-[#E8F0FF] transition-transform duration-300 group-hover:scale-105" />
             <div class="flex flex-col items-center space-y-1 leading-tight">
-              <p class="text-[#0043FE] font-bold text-lg">김선연</p>
+              <p class="text-[#0043FE] font-bold text-lg">김신연</p>
               <p class="font-semibold">변리사</p>
               <p class="text-sm text-gray-500">경력 17년</p>
             </div>
@@ -369,22 +380,22 @@
           </div>
           <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-left">
             <div>
-              <p class="font-semibold mb-1">경력</p>
+              <p class="font-semibold mb-1">주요업무사례</p>
               <ul class="list-disc list-inside space-y-1">
-                <li>(현) 특허법인 테헤란 파트너 변리사</li>
-                <li>한양대 화학공학부 석사</li>
-                <li>제44회 변리사시험 합격 (2007년)</li>
+                <li>네이버, 서울대학교 등의 국내외 특허 업무</li>
+                <li>엘지디스플레이, 인프라웨어, 디오텍 등의 국내외 특허 업무</li>
+                <li>신한은행 기술평가 모형, 전산시스템 개발</li>
+                <li>KB 인베스트먼트 기술가치평가 보고서 작성</li>
+                <li>한국디스플레이 연구 조합 특허맵 작성</li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold mb-1">주요 업무사례</p>
+              <p class="font-semibold mb-1">자격/외부활동</p>
               <ul class="list-disc list-inside space-y-1">
-                <li>네이버, 서울대학교 교수님 특허 업무 담당</li>
-                <li>멜파스, 네패스, 에이디테크놀로지, 디앤디전자 특허 업무 담당</li>
-                <li>한국산업기술평가관리원</li>
-                <li>산업은행 기술평가기관, 컨설팅사 개발</li>
-                <li>대한변리사회 지식재산 평가위원 (2015~2019)</li>
-                <li>신용보증기금 중소기업 지식재산 컨설팅 전문가</li>
+                <li>신한은행 기업금융부 기술평가역</li>
+                <li>한국생산기술연구원 평가위원</li>
+                <li>이코노믹리뷰 특허 칼럼니스트</li>
+                <li>신용보증기금, 중소기업인을 위한 기술금융 역량강화를 위한 지식재산 교육 (2020)</li>
               </ul>
             </div>
           </div>
@@ -403,18 +414,7 @@
           </div>
           <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-left">
             <div>
-              <p class="font-semibold mb-1">경력</p>
-              <ul class="list-disc list-inside space-y-1">
-                <li>특허법인 테헤란 변리사</li>
-                <li>테헤란 기술 변리사</li>
-                <li>테헤란 법무법인 변리사</li>
-                <li>테헤란 회계법무소 팀장 변리사</li>
-                <li>제44회 변리사 시험 합격 (2009년)</li>
-                <li>서울대학교 전자정보기기학과 학사/석사(수료)</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold mb-1">주요 업무사례</p>
+              <p class="font-semibold mb-1">주요업무사례</p>
               <ul class="list-disc list-inside space-y-1">
                 <li>삼성 모바일 디스플레이, 삼성 텔레콤 지재권 담당 변리사</li>
                 <li>삼성전자 영상기기/반도체/CAD센터 사업부 담당 변리사</li>
@@ -424,15 +424,24 @@
                 <li>현대차증권, 미국특허리스크 아카이브 강의</li>
               </ul>
             </div>
+            <div>
+              <p class="font-semibold mb-1">자격/외부활동</p>
+              <ul class="list-disc list-inside space-y-1">
+                <li>현대모비스, 자율주행용 안전설계개발 현황 소개 및 제동 리던던시 유압시스템 관련 특허맵 활용 전략 강의(2020)</li>
+                <li>현대자동차, 미국특허제도의 이해 및 심사실무 강의(2020)</li>
+                <li>주식회사 핸즈코퍼레이션, 직무발명제도의 이해 강의 (2018)</li>
+                <li>농업회사법인 유프레시, 특허 제도의 전반적인 이해와 특허출원 전략 강의 (2017)</li>
+              </ul>
+            </div>
           </div>
         </div>
       
-        <!-- 백상협 변리사 -->
+        <!-- 백상희희 변리사 -->
         <div class="group transition-transform duration-300 hover:scale-[1.015] hover:shadow-2xl flex flex-col md:flex-row bg-white rounded-2xl shadow-xl overflow-hidden p-8 items-center gap-8">
           <div class="flex flex-col items-center text-center md:w-1/4 space-y-4">
             <img src="images/bshPicture.png" alt="백상협 변리사 프로필 사진" class="w-40 h-auto object-contain rounded-xl bg-[#E8F0FF] transition-transform duration-300 group-hover:scale-105" />
             <div class="flex flex-col items-center space-y-1 leading-tight">
-              <p class="text-[#0043FE] font-bold text-lg">백상협</p>
+              <p class="text-[#0043FE] font-bold text-lg">백상희</p>
               <p class="font-semibold">변리사</p>
               <p class="text-sm text-gray-500">경력 19년</p>
             </div>
@@ -440,24 +449,23 @@
           </div>
           <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-left">
             <div>
-              <p class="font-semibold mb-1">경력</p>
+              <p class="font-semibold mb-1">주요업무사례</p>
               <ul class="list-disc list-inside space-y-1">
-                <li>특허법인 테헤란 대표 변리사 (현)</li>
-                <li>서울대학교 전자공학부 석사</li>
-                <li>세종 회계법무소 변리사</li>
-                <li>세종 국제특허법률사무소 변리사</li>
-                <li>제42회 변리사 시험 합격 (2006년)</li>
-                <li>미국특허 포커스전문과정 졸업</li>
+                <li>KT/삼성SDS 국내 대기업 통신분야 국내외 특허 업무 담당</li>
+                <li>GS건설/대우건설 국내 대기업 건설분야 국내외 특허 업무 담당</li>
+                <li>국세청/서울시/춘천시/파주시/울산시 등 주요 국가기관 국내 특허/상표/디자인 업무 담당</li>
+                <li>위메프/서울대학교/영단기 등 벤처/스타트업/중소 기업 지식재산권에 대한 4만건 이상의 관리 경험</li>
+                <li>100 개국 이상의 해외 특허/상표/디자인 업무 진행</li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold mb-1">주요 업무사례</p>
+              <p class="font-semibold mb-1">자격/외부활동</p>
               <ul class="list-disc list-inside space-y-1">
-                <li>KT/삼성SDS 국내/해외 특허 회피분석 업무 담당</li>
-                <li>GS건설/유한양행 건설분야 특허 대응 담당</li>
-                <li>한국발명진흥회 지재권평가 전문자문위원</li>
-                <li>산업은행/기보/신보 기술가치평가 위원</li>
-                <li>한국지식재산 전략원 심사위원</li>
+                <li>한국발명진흥회 시제품지원사업 자문위원</li>
+                <li>한국발명진흥회 비용지원사업 자문위원</li>
+                <li>한국발명진흥회 아이디어평가사업 자문위원</li>
+                <li>한국발명진흥원 자문변리사</li>
+                <li>중소기업 비즈니스파트너 전문위원</li>
               </ul>
             </div>
           </div>
