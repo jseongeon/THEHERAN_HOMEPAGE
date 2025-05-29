@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🌟 스크롤 시 fade-in 애니메이션
-  const fadeEls = document.querySelectorAll(".fade-in-up");
+  const fadeEls = document.querySelectorAll(".fade-in-up, .fade-img");
 
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -208,3 +208,73 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+//가로 슬라이드
+const section = document.querySelector('.why-card-outer');
+const track = document.querySelector('#cardTrack');
+const cards = track?.children || [];
+
+let targetX = 0;
+let currentX = 0;
+
+function animateSlideScroll() {
+  const isDesktop = window.innerWidth >= 1024;
+
+  if (!isDesktop) {
+    track.style.transform = 'none';
+    requestAnimationFrame(animateSlideScroll);
+    return;
+  }
+
+  const sectionTop = section.offsetTop;
+  const sectionHeight = section.offsetHeight;
+  const scrollY = window.scrollY;
+  const viewportHeight = window.innerHeight;
+
+  const cardCount = cards.length;
+  const cardWidth = cards[0].offsetWidth;
+  const gap = 48;
+  const maxTranslate = (cardCount - 1) * (cardWidth + gap);
+
+  if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight - viewportHeight) {
+    const progress = (scrollY - sectionTop) / (sectionHeight - viewportHeight);
+    targetX = -progress * maxTranslate;
+  }
+
+  currentX += (targetX - currentX) * 0.1;
+  track.style.transform = `translateX(${currentX}px)`;
+
+  requestAnimationFrame(animateSlideScroll);
+}
+requestAnimationFrame(animateSlideScroll);
+
+//customer 섹션션
+function animateBarGauges() {
+  document.querySelectorAll(".bar-fill").forEach(bar => {
+    const target = parseInt(bar.dataset.target, 10);
+    let current = 0;
+    const interval = setInterval(() => {
+      current++;
+      bar.style.width = `${current}%`;
+      if (current >= target) clearInterval(interval);
+    }, 10);
+  });
+
+  const circle = document.getElementById("circle-gauge");
+  let percent = 0;
+  const circleInterval = setInterval(() => {
+    percent += 0.5;
+    circle.setAttribute("stroke-dasharray", `${percent}, 100`);
+    if (percent >= 95.2) clearInterval(circleInterval);
+  }, 10);
+}
+
+let gaugeAnimated = false;
+window.addEventListener("scroll", () => {
+  const section = document.querySelector("section.py-\\[500px\\]");
+  if (!section) return;
+  const rect = section.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.8 && !gaugeAnimated) {
+    gaugeAnimated = true;
+    animateBarGauges();
+  }
+});
