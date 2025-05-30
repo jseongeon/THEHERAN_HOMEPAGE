@@ -3,5 +3,6 @@
 
 ## 🎬 동영상 링크 주소
 
-📁 [Google Drive에서 영상 보기](https://drive.google.com/drive/folders/1uYddi-LhydhCEtRwcWJe7Rt4tZ8KCiFI)
-📁 [이미지 다운로드 ]([https://drive.google.com/drive/folders/1uYddi-LhydhCEtRwcWJe7Rt4tZ8KCiFI](https://drive.google.com/drive/u/0/folders/1HcprvYEjefp8auwflJA4wezKWDRSU3Ko))
+📁 [Google Drive에서 영상 보기](https://drive.google.com/drive/folders/1uYddi-LhydhCEtRwcWJe7Rt4tZ8KCiFI)  
+[![이미지 다운로드](https://img.shields.io/badge/🖼-이미지_다운로드-blue?style=for-the-badge)](https://drive.google.com/drive/folders/1HcprvYEjefp8auwflJA4wezKWDRSU3Ko)
+
