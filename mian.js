@@ -247,16 +247,16 @@ function animateSlideScroll() {
 }
 requestAnimationFrame(animateSlideScroll);
 
-//customer 섹션션
+//customer 섹션
 function animateBarGauges() {
   document.querySelectorAll(".bar-fill").forEach(bar => {
     const target = parseInt(bar.dataset.target, 10);
     let current = 0;
     const interval = setInterval(() => {
-      current++;
+      current += 0.5;
       bar.style.width = `${current}%`;
       if (current >= target) clearInterval(interval);
-    }, 10);
+    }, 12);
   });
 
   const circle = document.getElementById("circle-gauge");
@@ -265,16 +265,35 @@ function animateBarGauges() {
     percent += 0.5;
     circle.setAttribute("stroke-dasharray", `${percent}, 100`);
     if (percent >= 95.2) clearInterval(circleInterval);
-  }, 10);
+  }, 8);
 }
 
 let gaugeAnimated = false;
 window.addEventListener("scroll", () => {
-  const section = document.querySelector("section.py-\\[500px\\]");
+  const section = document.getElementById("customer-satisfication");
   if (!section) return;
   const rect = section.getBoundingClientRect();
   if (rect.top < window.innerHeight * 0.8 && !gaugeAnimated) {
     gaugeAnimated = true;
     animateBarGauges();
+  }
+});
+
+// film 이미지 확대 세션
+const filmSection = document.getElementById("film-section");
+const filmImg = document.getElementById("film-img");
+
+window.addEventListener("scroll", () => {
+  if (!filmSection || !filmImg) return;
+
+  const rect = filmSection.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  if (rect.top < windowHeight && rect.bottom > 0) {
+    const progress = Math.min(Math.max((windowHeight - rect.top) / windowHeight, 0), 1);
+    const scale = 1 + progress * 0.6;
+
+    filmImg.style.transform = `scale(${Math.min(scale, 1.6)})`;
+    filmImg.style.opacity = `${0.6 + 0.4 * progress}`;
   }
 });
