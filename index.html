@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body class="relative">
+  <body class="relative overflow-x-hidden">
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full z-50 bg-[#1C1C1E] text-[#F2F2F7]">
       <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4">
@@ -71,7 +71,7 @@
 
     <!-- Section 1 -->
     <section class="flex items-center justify-center min-h-screen bg-[#0F0F0F] relative px-4 mb-[145px]">
-      <div class="w-full max-w-[960px] aspect-video bg-black rounded-[32px] overflow-hidden shadow-xl border border-white/10">
+      <div class="w-full max-w-[960px] aspect-video bg-black rounded-[32px] overflow-hidden shadow-xl border border-white/10"><br>
         <video src="./movie/pagemain.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
       </div>
       <div id="like-button" class="absolute bottom-6 right-6 flex items-center text-[#FAFAFA] space-x-2 text-lg cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110 active:scale-90">
@@ -554,8 +554,10 @@
               </ul>
             </div>
           </div>
-      
           <!-- 오른쪽 이미지 -->
+           <!-- <div class="rightframe">
+            <img src="./images/photos.png" alt="묶음이미지" class="rightimg">
+           </div> -->
           <div class="lg:w-1/2 space-y-10">
             <img src="./images/photo1.png" alt="테헤란 건물 외관 1" class="fade-img w-full rounded-xl shadow-lg" />
             <img src="./images/photo2.png" alt="테헤란 건물 외관 2" class="fade-img w-full rounded-xl shadow-lg" />
@@ -670,7 +672,7 @@
       </div> -->
 
       <!-- 고객만족도 -->
-      <section class="customer py-[500px] px-4">
+      <section id="customer-satisfication" class="customer py-[500px] px-4">
         <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
           <!-- 타이틀 -->
           <h2 class="text-[48px] md:text-[64px] font-extrabold text-[#0076FF] mb-[100px]">테헤란 고객 만족도</h2>
@@ -750,8 +752,145 @@
           </div>
         </div>
       </section>
-      <!-- 여기 애니메이션 미리 되고 있어서 해당 섹션도착하면 작동하게끔 애니메이션 수정해야함 -->
       
+      <section class="relative px-0 py-0 overflow-x-hidden space-y-20">
+        <img src="./images/customer/deco1.png" 
+        alt="배경 원형 데코1" 
+        class="hidden lg:block absolute top-[100px] left-0 w-[300px] z-0 pointer-events-none" />
+        <img src="./images/customer/deco2.png" 
+              alt="배경 원형 데코2" 
+              class="hidden lg:block absolute top-[1900px] right-[-50px] w-[400px] z-0 pointer-events-none" />
+              <img src="./images/customer/deco3.png" 
+              alt="배경 별모양 데코" 
+              class="hidden lg:block absolute top-[1300px] left-[300px] w-[100px] z-0 pointer-events-none" />
+        <img src="./images/customer/deco3.png" 
+              alt="배경 별모양 데코" 
+              class="hidden lg:block absolute top-[2600px] left-[80px] w-[100px] z-0 pointer-events-none" />
+        <div class="relative w-full lg:h-[3000px] flex flex-col items-center gap-10 lg:block z-10">
+          <!-- conINC -->
+          <img 
+            src="./images/customer/conINC.png" 
+            alt="장치특허 김 대표님 후기" 
+            class="rounded-[30px] shadow-lg transition duration-300 hover:scale-105 hover:brightness-105
+                   w-full max-w-[90%] sm:max-w-[600px] lg:absolute
+                   lg:top-[80px] lg:left-[15%] lg:w-[770px] lg:h-[480px] lg:max-w-none"/>
+      
+          <!-- csgcosmetic -->
+          <img 
+            src="./images/customer/csgcosmetic.png" 
+            alt="조성물특허 임 대표님 후기" 
+            class="rounded-[30px] shadow-lg transition duration-300 hover:scale-105 hover:brightness-105
+                   w-full max-w-[90%] sm:max-w-[600px] lg:absolute
+                   lg:top-[780px] lg:right-[17%] lg:w-[770px] lg:h-[480px] lg:max-w-none" />
+      
+          <!-- florounge -->
+          <img 
+            src="./images/customer/florounge.png" 
+            alt="아이디어특허 심 대표님 후기" 
+            class="rounded-[30px] shadow-lg transition duration-300 hover:scale-105 hover:brightness-105
+                   w-full max-w-[90%] sm:max-w-[600px] lg:absolute
+                   lg:top-[1500px] lg:left-[16%] lg:w-[770px] lg:h-[480px] lg:max-w-none" />
+      
+          <!-- greencraft -->
+          <img 
+            src="./images/customer/greencraft.png" 
+            alt="제품디자인 손 대표님 후기" 
+            class="rounded-[30px] shadow-lg transition duration-300 hover:scale-105 hover:brightness-105
+                   w-full max-w-[90%] sm:max-w-[600px] lg:absolute
+                   lg:top-[2200px] lg:right-[20%] lg:w-[780px] lg:h-[480px] lg:max-w-none" />
+                
+        </div>
+        <!-- 하단 미니 후기 -->
+        <div class="flex flex-wrap justify-center gap-12 px-4 py-16">
+          <img src="./images/customer/user1.png" class="rounded-[30px] shadow-md w-[300px] lg:w-auto transition hover:scale-105 hover:brightness-105" />
+          <img src="./images/customer/user2.png" class="rounded-[30px] shadow-md w-[300px] lg:w-auto transition hover:scale-105 hover:brightness-105" />
+          <img src="./images/customer/user3.png" class="rounded-[30px] shadow-md w-[300px] lg:w-auto transition hover:scale-105 hover:brightness-105" />
+          <img src="./images/customer/user4.png" class="rounded-[30px] shadow-md w-[300px] lg:w-auto transition hover:scale-105 hover:brightness-105" />
+          <img src="./images/customer/user5.png" class="rounded-[30px] shadow-md w-[300px] lg:w-auto transition hover:scale-105 hover:brightness-105" />
+          <img src="./images/customer/user6.png" class="rounded-[30px] shadow-md w-[300px] lg:w-auto transition hover:scale-105 hover:brightness-105" />
+        </div>
+      </section>
+      
+      <section class="w-screen px-4 py-20 mt-[100px]">
+        <div class="w-full max-w-[1200px] mx-auto text-center space-y-24">
+      
+          <!-- 상담섹션션 -->
+          <div class="space-y-12">
+            <h2 class="text-5xl lg:text-[60px] font-extrabold text-[#0476E0]">
+              다양한 상담 방법
+            </h2>
+            <p class="mt-4 text-lg  lg:text-[25px] text-gray-800">
+              나에게 <span class="text-[#0476E0] font-semibold">가장 적합 상담 방법 루트</span>를 선택해보세요.
+            </p>
+          </div>
+      
+          <!-- 상담 방식 아이콘 리스트 -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-10 justify-items-center">
+            <a href="#">
+              <img 
+                src="./images/call.png" 
+                alt="유선상담" 
+                class="w-[120px] sm:w-[140px] lg:w-auto lg:max-w-none hover-wiggle transition" />
+            </a>
+            <a href="#">
+              <img 
+                src="./images/chat.png" 
+                alt="채팅상담" 
+                class="w-[120px] sm:w-[140px] lg:w-auto lg:max-w-none hover-wiggle transition" />
+            </a>
+            <a href="#">
+              <img 
+                src="./images/borad.png" 
+                alt="게시판상담" 
+                class="w-[120px] sm:w-[140px] lg:w-auto lg:max-w-none hover-wiggle transition" />
+            </a>
+            <a href="#">
+              <img 
+                src="./images/selfCheck.png" 
+                alt="자가진단" 
+                class="w-[120px] sm:w-[140px] lg:w-auto lg:max-w-none hover-wiggle transition" />
+            </a>
+            <a href="#">
+              <img 
+                src="./images/message.png" 
+                alt="문자상담" 
+                class="w-[120px] sm:w-[140px] lg:w-auto lg:max-w-none hover-wiggle transition" />
+            </a>
+            <a href="#">
+              <img 
+                src="./images/kakakotalk.png" 
+                alt="카톡상담" 
+                class="w-[120px] sm:w-[140px] lg:w-auto lg:max-w-none hover-wiggle transition" />
+            </a>
+          </div>
+
+          <p class="text-base text-[#131313] flex justify-center items-center gap-2 lg:text-[22px]">
+            <img 
+              src="./images/check-icon.png" 
+              alt="체크 아이콘" 
+              class="w-4 h-4 lg:w-auto lg:h-auto lg:max-w-none" />
+            <span>
+              <span class="font-bold text-black">소속 전문가들</span>의 <span class="font-bold text-black">경력과 업무 사례</span>가 검증되어 있어요
+            </span>
+          </p>
+      
+        </div>
+      </section>
+
+      
+      <!-- 이미지 확대 세션 -->
+      <section class="relative h-[200vh] overflow-hidden mt-[150px]" id="film-section">
+        <div class="sticky top-0 h-screen flex items-center justify-center">
+          <img
+            src="./images/film1.png"
+            alt="필름 이미지"
+            id="film-img"
+            class="block mx-auto object-contain w-auto h-auto max-w-[80vw] max-h-[80vh] transition-transform duration-300 ease-out"
+          />
+        </div>
+      </section>
+      
+
     <!-- Section 3 -->
     <section class="flex items-center justify-center min-h-screen bg-[#E5E5EA] text-[#3C3C43] px-4">
       <h2 class="text-2xl md:text-4xl font-semibold text-center">Contact or Footer</h2>
