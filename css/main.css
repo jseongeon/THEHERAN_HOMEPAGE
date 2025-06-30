@@ -1,0 +1,255 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+
+body {
+  font-family: 'Pretendard Variable', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #F2F2F7;
+  color: #3C3C43;
+}
+
+/* 기본 강조 색 */
+.text-blue-highlight {
+  color: #0043fe;
+}
+
+/* 섹션 전환 페이드 */
+#intro-section,
+#section-1 {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+#intro-section {
+  opacity: 1;
+  z-index: 10;
+  position: relative;
+}
+
+#section-1 {
+  opacity: 0;
+  z-index: 5;
+  position: relative;
+}
+
+/* 그림자 */
+.shadow-lg {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 로고 애니메이션 */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-row {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  animation: slide-left linear infinite;
+  align-items: center;
+}
+
+.logo-item {
+  width: 160px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.logo-item img {
+  width: 80%;
+  height: 70%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+  transform: scale(1.1);
+}
+
+/* 페이드업 애니메이션 */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-img {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* .rightframe .rightimg {
+  overflow: fixed;
+} */
+ 
+/* 전체 섹션 */
+.why-card-outer {
+  background-color: #F2F2F7;
+  height: 400vh; /* ✅ PC 가로 스크롤용 높이 확보 */
+  position: relative;
+}
+
+/* 스티키 컨테이너 */
+.why-card-sticky {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 5vw;
+  position: static;
+}
+
+@media (min-width: 1024px) {
+  .why-card-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* 텍스트 영역 */
+.why-text {
+  text-align: center;
+  color: #3C3C43;
+  margin-bottom: 2rem;
+}
+
+.why-text h2 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .why-text h2 {
+    font-size: 64px;
+    font-weight: 900;
+  }
+}
+
+@media (min-width: 1024px) {
+  .why-text {
+    flex: 0 0 45%;
+    text-align: left;
+    margin-bottom: 0;
+    padding-right: 2rem;
+  }
+}
+
+/* 카드 래퍼 */
+.why-card-wrapper {
+  width: 100%;
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  min-height: auto;
+}
+
+@media (min-width: 1024px) {
+  .why-card-wrapper {
+    flex: 0 0 60%; /* ✅ PC에서 더 넓게 */
+    justify-content: flex-start;
+    overflow: hidden;
+    min-height: 480px; /* ✅ 호버 확대 여유 */
+    align-items: stretch;
+  }
+}
+
+/* 카드 트랙 */
+.why-card-track {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .why-card-track {
+    flex-direction: row;
+    gap: 48px;
+    padding-left: 16px;
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+  }
+}
+
+/* 카드 */
+.why-card {
+  width: 220px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .why-card {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .why-card {
+    width: 340px;
+    margin: 0;
+  }
+
+  .why-card:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* 카드 이미지 */
+.why-card img {
+  width: 100%;
+  max-height: 80vh;
+  height: auto;
+  object-fit: contain;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes shake-scale {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.05) rotate(2deg); }
+  50% { transform: scale(1.1) rotate(-2deg); }
+  75% { transform: scale(1.05) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.hover-wiggle:hover {
+  animation: shake-scale 0.5s ease-in-out;
+}
+
+
+
+
